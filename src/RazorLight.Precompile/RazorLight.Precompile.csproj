@@ -7,7 +7,7 @@
     <PackAsTool>true</PackAsTool>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <Authors>Mark Kharitonov</Authors>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
