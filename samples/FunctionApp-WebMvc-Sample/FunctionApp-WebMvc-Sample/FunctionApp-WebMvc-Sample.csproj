@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
 	<PreserveCompilationContext>true</PreserveCompilationContext>
     <RootNamespace>FunctionApp_WebMvc_Sample</RootNamespace>
+    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="wwwroot\Index.cshtml" />
