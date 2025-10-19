@@ -7,10 +7,9 @@ namespace RazorLight.Compilation
 	{
 		public string GetAssemblyPath(Assembly assembly)
 		{
-			string codeBase = assembly.Location;
-			UriBuilder uriBuilder = new UriBuilder(codeBase);
-			string assemblyDirectory = Uri.UnescapeDataString(uriBuilder.Path + uriBuilder.Fragment);
-			return assemblyDirectory;
+			return assembly.Location;
+			//UriBuilder uriBuilder = new UriBuilder(codeBase);
+			//string assemblyDirectory = Uri.UnescapeDataString(uriBuilder.Path + uriBuilder.Fragment);
 		}
 	}
 }

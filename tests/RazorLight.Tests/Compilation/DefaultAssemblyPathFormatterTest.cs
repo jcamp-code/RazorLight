@@ -27,17 +27,18 @@ namespace RazorLight.Tests.Compilation
 		[Fact]
 		public void Ensure_GetAssemblyPath_MatchesLegacy()
 		{
+			// don't really need this anymore as this fork of RazorLight only supports .NET 8.0 and up.
 			var assembly = typeof(DefaultAssemblyPathFormatterTest).Assembly;
 			_testOutputHelper.WriteLine(assembly.Location);
 			var directory = new DefaultAssemblyPathFormatter().GetAssemblyPath(assembly);
 			var legacyDir = new LegacyFixAssemblyPathFormatter().GetAssemblyPath(assembly);
 			Assert.NotNull(directory);
-			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-			{
-				// On Windows, legacy formatter returns forward-slash as separator due to UriBuilder.
-				// So "normalise" the default one for comparison.
-				directory = directory.Replace('\\', '/');
-			}
+			//if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+			//{
+			//	// On Windows, legacy formatter returns forward-slash as separator due to UriBuilder.
+			//	// So "normalise" the default one for comparison.
+			//	directory = directory.Replace('\\', '/');
+			//}
 
 			Assert.Equal(legacyDir, directory);
 		}

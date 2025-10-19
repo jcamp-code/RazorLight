@@ -8,11 +8,15 @@
     <PackageId>jcamp.RazorLight</PackageId>
     <Title>RazorLight</Title>
     <Description>Use Razor to build your templates from strings / files / EmbeddedResources outside of ASP.NET MVC for .NET Core</Description>
-    <Authors>toddams;johncampionjr</Authors>
+    <Authors>toddams;Github Contributors;johncampionjr</Authors>
     <PackageTags>RazorLight, razor, render, dotnet-core, dotnet, core, template-engine, email, emails</PackageTags>
+    <PackageIcon>razorlight_logo_64x64.png</PackageIcon>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/toddams/RazorLight</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/jcamp-code/RazorLight</RepositoryUrl>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
@@ -40,9 +44,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <None Include="../../README.md" Pack="true" Visible="false" PackagePath=""/>
+    <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath=""/>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../assets/razorlight_logo_64x64.png" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+
+
 </Project>
