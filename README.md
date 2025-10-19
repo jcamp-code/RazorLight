@@ -217,7 +217,7 @@ Visual Studio tooling knows nothing about RazorLight and assumes, that the view 
 </html>
 ````
 ____
-![Intellisense](github/autocomplete.png)
+![Intellisense](assets/autocomplete.png)
 
 # FAQ
 

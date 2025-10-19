@@ -41,3 +41,4 @@ nuget
 RazorLight.Sandbox/
 
 *.received.*
+nupkg/

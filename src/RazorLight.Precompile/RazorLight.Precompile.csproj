@@ -8,6 +8,7 @@
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <Authors>Mark Kharitonov</Authors>
     <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
