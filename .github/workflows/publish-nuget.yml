@@ -34,7 +34,14 @@ jobs:
         run: |
           dotnet pack --no-build -v normal --include-symbols -o nupkg
 
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{secrets.NUGET_USER}}
+
       - name: Push NuGet 🚀
         run: |
-          dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://f.feedz.io/jcamp/nuget-test/nuget/index.json --skip-duplicate
-        # dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+        # dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://f.feedz.io/jcamp/nuget-test/nuget/index.json --skip-duplicate
+        dotnet nuget push **/*.nupkg -k ${{steps.login.outputs.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
