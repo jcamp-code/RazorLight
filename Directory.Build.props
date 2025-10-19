@@ -6,7 +6,7 @@
     <EmbedUntrackedSource>true</EmbedUntrackedSource>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 
-    <RepositoryUrl>https://github.com/toddams/RazorLight</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jcamp-code/RazorLight</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
