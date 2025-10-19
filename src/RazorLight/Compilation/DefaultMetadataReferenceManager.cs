@@ -93,14 +93,14 @@ namespace RazorLight.Compilation
 		private static IEnumerable<Assembly> GetReferencedAssemblies(Assembly a, ISet<string> excludedAssemblies, HashSet<string> visitedAssemblies = null)
 		{
 			visitedAssemblies = visitedAssemblies ?? new HashSet<string>();
-			if (!visitedAssemblies.Add(a.GetName().EscapedCodeBase))
+			if (!visitedAssemblies.Add(a.GetName().Name))
 			{
 				yield break;
 			}
 
 			foreach (var assemblyRef in a.GetReferencedAssemblies())
 			{
-				if (visitedAssemblies.Contains(assemblyRef.EscapedCodeBase)) { continue; }
+				if (visitedAssemblies.Contains(assemblyRef.Name)) { continue; }
 
 				if (excludedAssemblies.Any(s => s.Contains(assemblyRef.Name))) { continue; }
 				var loadedAssembly = Assembly.Load(assemblyRef);
