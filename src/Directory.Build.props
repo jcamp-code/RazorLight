@@ -1,7 +1,27 @@
 <Project>
-  <!-- This is what currently determines the version number. -->
   <PropertyGroup>
+    <Deterministic>true</Deterministic>    
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <PackageIconUrl>https://raw.githubusercontent.com/jcamp-code/RazorLight/main/assets/razorlight_logo_64x64.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/jcamp-code/RazorLight</PackageProjectUrl>
+
+    <RepositoryUrl>https://github.com/jcamp-code/RazorLight</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugSymbols>true</DebugSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Version>3.0.0</Version>
   </PropertyGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+  </ItemGroup>
 
+  <ItemGroup>
+    <SourceRoot Include="$(NuGetPackageRoot)" Condition="'$(NuGetPackageRoot)' != ''"/>
+  </ItemGroup>
 </Project>
