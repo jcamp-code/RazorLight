@@ -26,13 +26,13 @@ jobs:
       - name: Install dependencies 📦️
         run: dotnet restore
 
-      # - name: Build 🔨
-      #  run: dotnet build --no-restore -c Release ./src/RazorLight/RazorLight.csproj
+      - name: Build 🔨
+        run: dotnet build --no-restore -c Release
 
       # If not using <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-      - name: Build 🔨 & Pack NuGet 🏗️
+      - name: Pack NuGet 🏗️
         run: |
-          dotnet pack -v normal --include-symbols -o nupkg
+          dotnet pack --no-build -v normal --include-symbols -o nupkg
 
       # Get a short-lived NuGet API key
       - name: NuGet login (OIDC → temp API key)
